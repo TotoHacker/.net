@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Infraestructure\Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Controllers\estudianteController.cs" />
+  </ItemGroup>
+
 </Project>

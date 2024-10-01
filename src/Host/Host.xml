@@ -4,5 +4,10 @@
         <name>Host</name>
     </assembly>
     <members>
+        <member name="M:Host.Controllers.EstudiantesController.GetEstudiantes">
+            <summary>
+            Lista de Estudiantes - GET
+            </summary>
+        </member>
     </members>
 </doc>
