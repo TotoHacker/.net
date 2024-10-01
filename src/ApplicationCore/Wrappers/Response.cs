@@ -1,4 +1,6 @@
-﻿namespace ApplicationCore.Wrappers
+﻿using Domain.Entities;
+
+namespace ApplicationCore.Wrappers
 {
     public class Response<T>
     {
@@ -23,5 +25,6 @@
         public string Message { get; set; }
         public List<string> Errors { get; set; }
         public T Result { get; set; }
+        public List<Estudiantes> Data { get; set; }
     }
 }

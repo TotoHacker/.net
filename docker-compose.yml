@@ -1,8 +1,22 @@
 version: '3.4'
 
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - SA_PASSWORD=A1r2b3e4y5!
+      - ACCEPT_EULA=Y
+    ports:
+      - "1460:1433"  # Cambia el puerto externo a 1434
+
   host:
     image: ${DOCKER_REGISTRY-}host
     build:
       context: .
       dockerfile: src/Host/Dockerfile
+    ports:
+      - "5000:5000"  # Cambia el puerto según la configuración de tu aplicación
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=UserApiDb;User Id=sa;Password=A1r2b3e4y5!;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver  # Asegura que el servicio de SQL Server se inicie antes que este
