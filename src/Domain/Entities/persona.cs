@@ -20,3 +20,4 @@ namespace Domain.Entities
         public string ComidaFav { get; set; }
     }
 }
+

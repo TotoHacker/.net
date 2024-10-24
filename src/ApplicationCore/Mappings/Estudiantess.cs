@@ -1,15 +1,15 @@
 ﻿using ApplicationCore.Commands;
-using ApplicationCore.DTOs;
 using AutoMapper;
 using Domain.Entities;
 
 namespace ApplicationCore.Mappings
 {
-    class Estudiantess : Profile
+    public class EstudiantesProfile : Profile // Cambié el nombre de la clase
     {
-        public Estudiantess() {
+        public EstudiantesProfile()
+        {
             CreateMap<EstudianteCreateCommand, Estudiantes>()
-                .ForMember(x => x.id , y => y.Ignore());
+                .ForMember(x => x.id, y => y.Ignore()); 
         }
     }
 }

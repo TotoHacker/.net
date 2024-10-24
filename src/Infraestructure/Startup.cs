@@ -51,7 +51,7 @@ namespace Infraestructure
             app.UseCurrentUser();
             app.UseMultiTenancy();
             app.UseAuthorization();
-
+            app.UseCors("AllowAll");
             app.UseExceptionMiddleware();
             app.UseEndpoints(endpoints =>
             {
