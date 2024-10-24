@@ -36,10 +36,15 @@
                 var result = await _mediator.Send(command);
                 return Ok(result);
             }
-               
-            
-
-
-
+        [HttpPost("deleteEstudiante/{id}")]
+        public async Task<ActionResult<Response<int>>> DeleteEstudiante([FromRoute] int id)
+        {
+            var result = await _service.DeleteEstudiante(id);
+            return Ok(result);
         }
+
+
+
+
     }
+}
