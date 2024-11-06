@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.DTOs;
 using ApplicationCore.Interfaces;
 using Domain.Contracts;
+using Domain.Entities;
 using Finbuckle.MultiTenant;
 using Infraestructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ namespace Infraestructure.Persistence
 
         // Used by Dapper
         public IDbConnection Connection => Database.GetDbConnection();
+        public DbSet<ColaboradoresEntities> Colaboradores { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
